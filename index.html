@@ -12,26 +12,17 @@
     <div id="app">
       <div class="nav-bar"></div>
 
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-              <img :src="image" >
-              <img :alt="description">
-              <a :href="url">
-              <div :class ="isActive">
-              <span :style="isActive">
-            </div>
-            <div class="product-info">
-           <h1> product </h1>
-           <p>ik hou van socken</p> 
-          
-            </div>
-        </div>
-      </div> 
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+      
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <!-- Import component -->
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
 
     <script>
       const mountedApp = app.mount('#app')
